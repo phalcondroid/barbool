@@ -1,0 +1,33 @@
+{
+  "name": "barbool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "public/barbool.js",
+  "dependencies": {
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.3",
+    "webpack": "^5.78.0",
+    "webpack-dev-server": "^4.13.2",
+    "wepack-cli": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.2"
+  },
+  "scripts": {
+    "build": "npx webpack",
+    "start": "webpack-dev-server --mode development",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phalcondroid/barbool.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phalcondroid/barbool/issues"
+  },
+  "homepage": "https://github.com/phalcondroid/barbool#readme"
+}
