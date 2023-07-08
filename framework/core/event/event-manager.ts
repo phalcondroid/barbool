@@ -22,7 +22,7 @@ export class EventManager {
     if (params.type === EventType.BEFORE) {
       eventTree = this.eventsTree.beforeEvents;
     }
-    const name = params.eventName;
+    const name = params.channel;
     if (eventTree[name] === undefined) {
       eventTree[name] = [];
     }
@@ -34,7 +34,7 @@ export class EventManager {
    * @param params 
    */
   fire(params: FireTypeItem) {
-    const name = params.eventName;
+    const name = params.channel;
     if (this.eventsTree.regularEvents[name] === undefined) {
       throw Error(`Don't exist events attached to '${name}'`);
     }

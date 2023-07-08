@@ -21,7 +21,7 @@ export class StateListenerBuilder implements HTMLViewElement {
 
   private setEvents(element: TagManager, child: Function, type = EventType.REGULAR) {
     this.params.manager.subscribe({
-      eventName: this.params.stream, 
+      channel: this.params.stream, 
       action: (data: any) => {
         console.log(`setting type: ${type}`, child, element);
         element.empty();

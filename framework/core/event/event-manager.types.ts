@@ -9,13 +9,13 @@ export enum EventType {
 }
 
 export type SubscribeTypeItem = {
-    eventName: string;
+    channel: string;
     action: Function;
     type?: EventType;
 }
 
 export type FireTypeItem = {
-    eventName: string;
+    channel: string;
     data: any,
     type?: EventType 
 }

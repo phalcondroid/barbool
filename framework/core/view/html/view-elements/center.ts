@@ -9,9 +9,7 @@ type ComponentType = {
 export class Center implements HTMLViewElement {
   constructor(
     public params: ComponentType 
-  ) {
-
-  }
+  ) { }
 
   render(): TagManager {
     const component = new TagManager('div');
@@ -22,7 +20,7 @@ export class Center implements HTMLViewElement {
       'justify-content': 'center',
       'align-items': 'center',
     });
-    component.append(this.params.child.render());
+    component.append(this.params.child.render(component));
     return component;
   }
 }

@@ -14,13 +14,13 @@ export class Expanded implements HTMLViewElement {
 
   }
 
-  render(): TagManager {
+  render(context: any): TagManager {
     const expanded = new TagManager('div');
     const flex = this.params.flex ?? 1;
     expanded.css({
       'flex': `${flex} auto`
     });
-    const element = this.params.child.render();
+    const element = this.params.child.render(expanded);
     element.css({
       'width': '100%',
       'height': '100%'

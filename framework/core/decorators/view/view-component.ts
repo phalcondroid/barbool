@@ -14,7 +14,6 @@ export function OldComponent(params: any) {
 }
 
 export function ViewComponent(params: any) {
-
   return function <T extends { new(...constructorArgs: any[]): {} }>(constructorFunction: T) {
       const newConstructorFunction: any = function (...args: any) {
           const func: any = function () {
@@ -23,9 +22,9 @@ export function ViewComponent(params: any) {
           func.prototype = constructorFunction.prototype;
           const element = document.getElementById(params.id);
           const tag = new TagManager(element);
-          func.prototype.onConstruct(tag)
-          const stateManager = (new params.stateManager())
-          tag.append(func.prototype.render(stateManager).render());
+          func.prototype.onConstruct(tag);
+          const stateManager = new params.stateManager();
+          tag.append(func.prototype.render(stateManager).render(tag));
           const result: any = new func();
           return result;
       }

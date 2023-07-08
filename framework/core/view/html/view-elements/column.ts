@@ -17,7 +17,7 @@ export class Column implements HTMLViewElement {
     public params: ColumnType
   ) { }
 
-  render(): TagManager {
+  render(parent: TagManager): TagManager {
     const column = new TagManager('div');
     column.css({
       'width': '100%',
@@ -25,10 +25,7 @@ export class Column implements HTMLViewElement {
       'display': 'flex',
       'flex-direction': this.params.direction ?? ColumnDirection.VERTICAL
     });
-    column.append(this.params.children.map(item => {
-      const element: TagManager = item.render();
-      return element;
-    }));
+    column.append(this.params.children.map(item => item.render(column)));
     return column;
   }
 }

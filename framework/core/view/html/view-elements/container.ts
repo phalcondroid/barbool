@@ -18,13 +18,13 @@ export class Container implements HTMLViewElement {
 
   }
 
-  render(): TagManager {
+  render(context: any): TagManager {
     const container = new TagManager('div');
     const css: any = {};
     if (this.params?.color)
       css['background-color'] = this.params.color;
     if (this.params?.child) {
-      container.append(this.params.child.render());
+      container.append(this.params.child.render(container));
     }
     container.css(css);
     return container;

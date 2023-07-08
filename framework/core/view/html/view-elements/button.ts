@@ -13,10 +13,10 @@ export class Button implements HTMLViewElement {
     public params: ListeneableComponentType 
   ) { }
 
-  render(): TagManager {
+  render(parent: TagManager): TagManager {
     const component = new TagManager('button');
     const eventManager = new ViewElementManager(component);
-    component.append(this.params.child.render());
+    component.append(this.params.child.render(component));
     eventManager.click(this.params.onPressed);
     component.class(this.params.css ?? '');
     return component;

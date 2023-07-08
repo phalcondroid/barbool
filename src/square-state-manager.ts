@@ -7,10 +7,16 @@ export class SquareStateManager extends StateManager {
   }
 
   public async wtfButton() {
-    this.fire({ eventName: "characters", data: {}, type: EventType.BEFORE });
+    console.log('1', 'inicianding');
+    this.fire({ channel: "characters", data: {}, type: EventType.BEFORE });
     const response = await fetch("https://rickandmortyapi.com/api/character");
     const jsonData = await response.json();
-    console.log('llega annie', jsonData);
-    setTimeout(() => this.fire({ eventName: "characters", data: jsonData.results }), 3000);
+    console.log('2', jsonData);
+    setTimeout(() => this.fire({ 
+        channel: "characters", 
+        data: jsonData.results 
+      }),
+      3000
+    );
   }
 }
